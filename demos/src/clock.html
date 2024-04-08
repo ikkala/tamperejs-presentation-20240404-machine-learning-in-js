@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Clock</title>
+        <style>
+            .full {
+                background: black;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%)
+            }
+            .canvas {
+                position: absolute;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transition-property: transform;
+                transition-timing-function: linear;
+                transition-duration: 0.5s;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body style="background: black; height: 100%;">
+        <button id="fullScreen" style="height: 60px; width: 100px; left: 0; top: 0;">Full Screen</button>
+        <br/>
+        <div id="result" style="color: white; visibility:hidden; position:absolute; font-size: 50px; text-wrap: wrap; width: 30%;"></div>
+        <div id="canvasDiv">
+            <canvas id="canvas" width="1000" height="1000" class="canvas"></canvas>
+        </div>
+        <video id="video" autoplay muted playsinline="" style="bottom: 0; -webkit-transform:scaleX(-1);transform:scaleX(-1);visibility:hidden;width:auto;height:40%;position:absolute;" width="640" height="480"></video>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-cpu"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgpu"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <script src="./clock.js"></script>
+</html>
